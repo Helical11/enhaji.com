@@ -1,4 +1,99 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://enhaji.com/"
+languageCode = "ja-jp"
+defaultContentLanguage = "ja"
+title = "Enhaji"
 theme = "hugo-narrow"
+
+hasCJKLanguage = true
+enableEmoji = true
+
+[permalinks]
+posts = "/posts/:slug/"
+pages = "/:slug/"
+
+[pagination]
+pagerSize = 10
+path = "page"
+
+[languages]
+  ja = { languageCode = "ja-JP", languageName = "日本語", weight = 1 }
+  en = { languageCode = "en-US", languageName = "English", weight = 2 }
+  zh-cn = { languageCode = "zh-CN", languageName = "简体中文", weight = 3 }
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[[menus.main]]
+  name = "nav.posts"
+  pageRef = "/posts"
+  weight = 20
+  [menus.main.params]
+    icon = "posts"
+
+[[menus.main]]
+  name = "nav.categories"
+  pageRef = "/categories"
+  weight = 30
+  [menus.main.params]
+    icon = "categories"
+
+[[menus.main]]
+  name = "nav.tags"
+  pageRef = "/tags"
+  weight = 40
+  [menus.main.params]
+    icon = "tags"
+
+[[menus.main]]
+  name = "nav.archives"
+  pageRef = "/archives"
+  weight = 50
+  [menus.main.params]
+    icon = "archive"
+
+[[menus.footer]]
+  name = "About"
+  pageRef = "/about"
+  weight = 10
+  [menus.footer.params]
+    icon = "about"
+[[menus.footer]]
+  name = "Contact"
+  url = "https://google.com"
+  weight = 20
+  [menus.footer.params]
+    icon = "contact"
+[[menus.footer]]
+  name = "RSS Feed"
+  url = "/index.xml"
+  weight = 30
+  [menus.footer.params]
+    icon = "rss"
+
+[[menus.social]]
+  name = "GitHub"
+  url = "https://github.com/helical11"
+  weight = 10
+  [menus.social.params]
+    icon = "github"
+[[menus.social]]
+  name = "Twitter"
+  url = "https://x.com/HelicalEngineer"
+  weight = 20
+  [menus.social.params]
+    icon = "twitter"
+
+[outputs]
+home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+mediaType = "application/manifest+json"
+baseName = "site"
+isPlainText = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.152.2"
+
